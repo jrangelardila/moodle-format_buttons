@@ -166,7 +166,7 @@ class format_buttons extends core_courseformat\base
 
         $courseformatoptionsedit['bgcolor_selected'] = array(
             'label' => get_string('bgcolor_selected', 'format_buttons'),
-            'help' => 'bgcolor',
+            'help' => 'bgcolor_selected',
             'help_component' => 'format_buttons',
             'element_type' => 'text',
             'default' => get_config('format_buttons', 'bgcolor_selected')
@@ -174,7 +174,7 @@ class format_buttons extends core_courseformat\base
 
         $courseformatoptionsedit['fontcolor_selected'] = array(
             'label' => get_string('fontcolor_selected', 'format_buttons'),
-            'help' => 'colorfont',
+            'help' => 'fontcolor_selected',
             'help_component' => 'format_buttons',
             'element_type' => 'text',
             'default' => get_config('format_buttons', 'fontcolor_selected')
@@ -265,7 +265,7 @@ class format_buttons extends core_courseformat\base
 
                 $courseformatoptionsedit['group_colorfont' . ($i + 1)] = array(
                     'label' => get_string('color_gruping', 'format_buttons', $i + 1),
-                    'help' => 'colorfont',
+                    'help' => 'color_gruping',
                     'help_component' => 'format_buttons',
                     'element_type' => 'text',
                 );
