@@ -74,9 +74,7 @@ class content extends content_base
             default => "0%",
         };
 
-
-        global $DB;
-
+        $verified_exist = false;
         $section = $this->get_last_section_access();
         if ($section) {
             $verified_exist = $DB->get_record('course_sections', ['section' => $section,
