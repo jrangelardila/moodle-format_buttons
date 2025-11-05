@@ -188,6 +188,7 @@ class content extends content_base
             'bgcolor_selected' => $course->bgcolor_selected,
             'fontcolor_selected' => $course->fontcolor_selected,
             'form_btn' => $form_btn,
+            'sectionreturn' => "null"
         ];
 
         if ($format->show_editor()) {
