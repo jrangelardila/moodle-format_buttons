@@ -251,8 +251,8 @@ class content extends content_base
                     $title = "group_title" . ($i + 1);
                     $obj->title = $course->{$title};
 
-                    $color = "group_colorfont" . ($i + 1);
-                    $obj->color = $course->{$color};
+                    $color = "group_bgcolor" . ($i + 1);
+                    $obj->bgcolor = $course->{$color} != '' ? $course->{$color} : $course->bgcolor ;
 
                     $atribute_sections[$i + 1] = $obj;
                 }
@@ -274,7 +274,7 @@ class content extends content_base
                     if ($total_count_group >= $count) continue;
                     $count_first_btn_section++;
                     //echo "total: " . $total_count_group . " count: " . $count . "<br>";
-                    $section->bgcolor = $atribute_section->color != "" ? $atribute_section->color : $section->bgcolor;
+                    $section->bgcolor = $atribute_section->bgcolor != "" ? $atribute_section->bgcolor : $section->bgcolor;
                     $section->namesection = $num_sections == 1 ? "..." : $this->get_namesection_for_btn($count - $total_count_group, $course);
                     if ($atribute_section->title != "" && $count_first_btn_section == 1) {
                         $section->text_section = $atribute_section->title;
