@@ -203,6 +203,21 @@ class format_buttons extends core_courseformat\base
                 )
             )
         );
+        $opt = get_config('format_buttons', 'selectbuttonalignment');
+        $courseformatoptionsedit['selectbuttonalignment'] = array(
+            'label' => get_string('selectbuttonalignment', 'format_buttons'),
+            'help' => 'selectbuttonalignment',
+            'help_component' => 'format_buttons',
+            'element_type' => 'select',
+            'default' => $opt,
+            'element_attributes' => array(
+                array(
+                    'start' => get_string('selectbuttonalignmentleft', 'format_buttons'),
+                    'center' => get_string('selectbuttonalignmentcenter', 'format_buttons'),
+                    'end' => get_string('selectbuttonalignmentright', 'format_buttons'),
+                )
+            )
+        );
 
         $courseformatoptionsedit['selectform'] = array(
             'label' => get_string('selectform', 'format_buttons'),

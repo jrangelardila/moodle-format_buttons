@@ -45,6 +45,20 @@ if ($ADMIN->fulltree) {
         $options
     ));
 
+    $optionsalignment = array(
+        'start' => get_string('selectbuttonalignmentleft', 'format_buttons'),
+        'center' => get_string('selectbuttonalignmentcenter', 'format_buttons'),
+        'end' => get_string('selectbuttonalignmentright', 'format_buttons')
+    );
+
+    $settings->add(new admin_setting_configselect(
+        'format_buttons/selectbuttonalignment',
+        get_string('selectbuttonalignment', 'format_buttons'),
+        get_string('selectbuttonalignment_desc', 'format_buttons'),
+        'start', // Default value.
+        $optionsalignment
+    ));
+
     $settings->add(new admin_setting_configcolourpicker(
         'format_buttons/fontcolor_selected',
         get_string('fontcolor_selected', 'format_buttons'),

@@ -10,6 +10,7 @@
 {{! Mandatory the content/section block. }}
     {{$ core_courseformat/local/content/section }}
         {{^section}}
+        <div style="display: flex; flex-direction: row; justify-content: {{{alignmentmenu}}};">
             {{#all_sections}}
                 {{#body}}
                     <b class="text-black">{{{text_section}}}</b>
@@ -31,6 +32,7 @@
                     {{/selected}}
                 {{/body}}
             {{/all_sections}}
+        </div>
         {{/section}}
         {{> format_buttons/local/content/section }}
 
