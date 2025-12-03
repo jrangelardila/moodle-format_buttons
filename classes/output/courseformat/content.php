@@ -176,6 +176,7 @@ class content extends content_base
         $course->colorfont = $course->colorfont != "" ? $course->colorfont : get_config('format_buttons', 'fontcolor');
         $course->bgcolor_selected = $course->bgcolor_selected != "" ? $course->bgcolor_selected : get_config('format_buttons', 'bgcolor_selected');
         $course->fontcolor_selected = $course->fontcolor_selected != "" ? $course->fontcolor_selected : get_config('format_buttons', 'fontcolor_selected');;
+        $course->selectbuttonalignment = $course->selectbuttonalignment != "" ? $course->selectbuttonalignment : get_config('format_buttons', 'selectbuttonalignment');;
 
         $data = (object)[
             'title' => $format->page_title(),
@@ -183,6 +184,7 @@ class content extends content_base
             'all_sections' => $array_sections,
             'format' => $format->get_format(),
             'sectionclasses' => '',
+            'alignmentmenu' => $course->selectbuttonalignment,
             'bgcolor' => $course->bgcolor,
             'colorfont' => $course->colorfont,
             'bgcolor_selected' => $course->bgcolor_selected,
