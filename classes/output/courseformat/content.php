@@ -254,7 +254,7 @@ class content extends content_base
                     $obj->title = $course->{$title};
 
                     $color = "group_colorfont" . ($i + 1);
-                    $obj->color = $course->{$color} != '' ? $course->{$color} : $course->bgcolor ;
+                    $obj->color = $course->{$color};
 
                     $atribute_sections[$i + 1] = $obj;
                 }
