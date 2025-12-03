@@ -270,7 +270,7 @@ class format_buttons extends core_courseformat\base
                     'element_type' => 'text',
                 );
 
-                $courseformatoptionsedit['group_colorfont' . ($i + 1)] = array(
+                $courseformatoptionsedit['group_bgcolor' . ($i + 1)] = array(
                     'label' => get_string('color_gruping', 'format_buttons', $i + 1),
                     'help' => 'colorfont',
                     'help_component' => 'format_buttons',
