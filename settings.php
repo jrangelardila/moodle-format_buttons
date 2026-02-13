@@ -41,7 +41,7 @@ if ($ADMIN->fulltree) {
         'format_buttons/selectoption',
         get_string('numeretion', 'format_buttons'),
         get_string('numeretion_desc', 'format_buttons'),
-        'option1', // Default value.
+        'number', // Default value.
         $options
     ));
 
