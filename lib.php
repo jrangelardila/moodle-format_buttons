@@ -246,6 +246,20 @@ class format_buttons extends core_courseformat\base
             )
         );
 
+        $courseformatoptionsedit['group_numbering_reset'] = array(
+            'label' => get_string('group_numbering_reset', 'format_buttons'),
+            'help' => 'group_numbering_reset',
+            'help_component' => 'format_buttons',
+            'element_type' => 'select',
+            'default' => '1',
+            'element_attributes' => array(
+                array(
+                    '1' => get_string('numbering_reset', 'format_buttons'),
+                    '0' => get_string('numbering_continuous', 'format_buttons'),
+                )
+            )
+        );
+
         $max_groups = get_config('format_buttons', 'max_groups');
         if ($max_groups != 0) {
             $max_sections = $this->get_max_sections();

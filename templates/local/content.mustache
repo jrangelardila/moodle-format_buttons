@@ -52,5 +52,17 @@
     {{$ core_courseformat/local/content/bulkedittools}}
     {{/ core_courseformat/local/content/bulkedittools}}
 
-    <a href="{{{url_add_section}}}" class="btn btn-primary">Add section</a>
+    <div class="d-flex align-items-center gap-3 mt-4">
+        <a href="{{{url_add_section}}}" class="btn btn-primary d-flex align-items-center gap-2">
+            <i class="fa-solid fa-plus" aria-hidden="true"></i>
+            {{#str}} addsections, format_buttons {{/str}}
+        </a>
+        {{#editgroupsurl}}
+        <div class="vr"></div>
+        <a href="{{{editgroupsurl}}}" class="btn btn-outline-secondary d-flex align-items-center gap-2">
+            <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
+            {{#str}} manage_groups, format_buttons {{/str}}
+        </a>
+        {{/editgroupsurl}}
+    </div>
 {{/bulkedittools}}

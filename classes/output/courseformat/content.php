@@ -194,6 +194,13 @@ class content extends content_base
         if ($format->show_editor()) {
             $bulkedittools = new $this->bulkedittoolsclass($format);
             $data->bulkedittools = $bulkedittools->export_for_template($output);
+
+            if ((int) get_config('format_buttons', 'max_groups') > 0) {
+                $data->editgroupsurl = (new moodle_url(
+                    '/course/format/buttons/editgroups.php',
+                    ['id' => $course->id]
+                ))->out(false);
+            }
         }
 
         $sectionnavigation = new $this->sectionnavigationclass($format, $this->currentsection);
@@ -259,6 +266,9 @@ class content extends content_base
             }
         }
 
+        // 1 = reset count per group (default), 0 = continuous across groups.
+        $reset_numbering = (int) ($course->group_numbering_reset ?? 1);
+
         $total_count_group = 0;
         foreach ($atribute_sections as $atribute_section) {
             $num_sections = $atribute_section->count;
@@ -273,9 +283,9 @@ class content extends content_base
                     $count++;
                     if ($total_count_group >= $count) continue;
                     $count_first_btn_section++;
-                    //echo "total: " . $total_count_group . " count: " . $count . "<br>";
                     $section->bgcolor = $atribute_section->color != "" ? $atribute_section->color : $section->bgcolor;
-                    $section->namesection = $num_sections == 1 ? "..." : $this->get_namesection_for_btn($count - $total_count_group, $course);
+                    $position = $reset_numbering ? ($count - $total_count_group) : $count;
+                    $section->namesection = $num_sections == 1 ? "..." : $this->get_namesection_for_btn($position, $course);
                     if ($atribute_section->title != "" && $count_first_btn_section == 1) {
                         $section->text_section = $atribute_section->title;
                     }
