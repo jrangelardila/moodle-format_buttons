@@ -241,7 +241,7 @@ class format_buttons extends core_courseformat\base
 
         $max_groups = get_config('format_buttons', 'max_groups');
         if ($max_groups != 0) {
-            $max_sections = $this->get_max_sections();
+            $max_sections = count($this->get_sections());
             $numbers = range(0, $max_sections);
 
             for ($i = 0; $i < $max_groups; $i++) {
